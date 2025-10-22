@@ -37,7 +37,8 @@ VALUES
 (104, 'Kiran', 'Solanki', 'kiran.s@example.com', 47000, NULL);  -- dept_id missing handled as NULL
 
 
--- 3. UPDATE DATA (Clean & Consistent)
+-- 3. UPDATE DATA 
+
 -- Update NULL salary with default
 UPDATE employee
 SET salary = 30000
@@ -53,7 +54,9 @@ UPDATE department
 SET location = 'Hyderabad'
 WHERE dept_name = 'Finance';
 
--- 4. DELETE DATA (Using WHERE for safety)
+
+-- 4. DELETE DATA (Using WHERE)
+
 -- Delete employees with missing email
 DELETE FROM employee
 WHERE email IS NULL;
@@ -61,6 +64,7 @@ WHERE email IS NULL;
 -- Example: delete a department safely
 DELETE FROM department
 WHERE dept_id = 3;
+
 
 -- 5. VERIFY DATA
 SELECT * FROM department;
